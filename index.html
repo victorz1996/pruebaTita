@@ -10,8 +10,12 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
-    <title>Template</title>
+    <title>Tita Prueba</title>
   </head>
   <body>
     <header>
@@ -26,22 +30,24 @@
           </a>
           <ul>
             <li class="active">
-              <a href="index.html"> All </a>
+              <a onclick="getAll()" href="#filters"> All </a>
             </li>
             <li>
-              <a href="#"> Branding </a>
+              <a onclick="filter('branding')" href="#filters"> Branding </a>
             </li>
             <li>
-              <a href="#"> Web </a>
+              <a onclick="filter('web')" href="#filters"> Web </a>
             </li>
             <li>
-              <a href="#"> Photography </a>
+              <a onclick="filter('photograpy')" href="#filters">
+                Photography
+              </a>
             </li>
             <li>
-              <a href="#"> App </a>
+              <a onclick="filter('app')" href="#filters"> App </a>
             </li>
             <li>
-              <a>
+              <a href="#filters">
                 <i
                   style="color: deeppink; cursor: pointer"
                   class="fas fa-search"
@@ -59,7 +65,7 @@
         <small>Magna mundi referrentur quo, no rebum dignissim qui</small>
         <br /><small>Per quodsi accusata id, labores.</small>
         <br />
-        <div class="boton_personalizado">VIEW OUR WORK</div>
+        <a href="#filters" class="boton_personalizado">VIEW OUR WORK</a>
       </div>
     </div>
 
@@ -76,58 +82,80 @@
       <nav>
         <ul>
           <li class="active">
-            <a style="cursor: pointer"> All </a>
+            <a onclick="getAll()" style="cursor: pointer"> All </a>
           </li>
           <li>
-            <a style="cursor: pointer"> Branding </a>
+            <a onclick="filter('branding')" style="cursor: pointer">
+              Branding
+            </a>
           </li>
           <li>
-            <a style="cursor: pointer"> Web </a>
+            <a onclick="filter('web')" style="cursor: pointer"> Web </a>
           </li>
           <li>
-            <a style="cursor: pointer"> Photography </a>
+            <a onclick="filter('photograpy')" style="cursor: pointer">
+              Photography
+            </a>
           </li>
           <li>
-            <a style="cursor: pointer"> App </a>
+            <a onclick="filter('app')" style="cursor: pointer"> App </a>
           </li>
         </ul>
       </nav>
     </div>
 
-    <div class="portafolio">
-      <div class="portafolio-item">
-        <img src="img/galery/1.jpg"  alt="" class="portafolio-img" />
-        <h2 class="portafolio-title">Imagen 1</h2>
-      </div>
-      <div class="portafolio-item">
-        <img src="img/galery/2.jpg"  alt="" class="portafolio-img" />
-        <h2 class="portafolio-title">Imagen 2</h2>
-      </div>
-      <div class="portafolio-item">
-        <img src="img/galery/3.jpg"  alt="" class="portafolio-img" />
-        <h2 class="portafolio-title">Imagen 1</h2>
-      </div>
-      <div class="portafolio-item">
-        <img src="img/galery/4.jpg"  alt="" class="portafolio-img" />
-        <h2 class="portafolio-title">Imagen 1</h2>
-      </div>
-      <div class="portafolio-item">
-        <img src="img/galery/5.jpg"  alt="" class="portafolio-img" />
-        <h2 class="portafolio-title">Imagen 1</h2>
-      </div>
-      <div class="portafolio-item">
-        <img src="img/galery/6.jpg"  alt="" class="portafolio-img" />
-        <h2 class="portafolio-title">Imagen 1</h2>
-      </div>
-      <div class="portafolio-item">
-        <img src="img/galery/7.jpg"  alt="" class="portafolio-img" />
-        <h2 class="portafolio-title">Imagen 1</h2>
-      </div>
-      <div class="portafolio-item">
-        <img src="img/galery/8.jpg"  alt="" class="portafolio-img" />
-        <h2 class="portafolio-title">Imagen 1</h2>
-      </div>
+    <div class="buscador">
+      <input onkeyup="buscar(event)" type="text" name="buscador" id="buscador" placeholder="Buscar" />
     </div>
-    <script src="index.js"></script>
+
+    <div class="error" id="error">
+
+    </div>
+    
+
+    <div class="portafolio" id="portafolio"></div>
+
+    <div class="verMas">
+      <div onclick="verMas()" class="boton_personalizado2">Show Me More</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div id="copyrigth">
+        <p>
+          &copy; 2016 - <strong id="negrita">Sneak</strong> All Right Reserved
+        </p>
+      </div>
+      <div id="redes">
+        <ul class="social">
+          <li>
+            <a href="http://facebook.com">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://twitter.com">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-basketball-ball"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fab fa-google-plus-g"></i>
+            </a>
+          </li>
+          <li>
+            <a href="http://youtube.com">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
